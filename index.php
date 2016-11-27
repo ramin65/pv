@@ -7,7 +7,7 @@
 # if you need Help for develop this source , You Can Send Message To Me With @SpyGuard_BOT #
 ############################################################################################
 */
-define('API_KEY','291247037:AAHVCPVRFGeqFo8ZAfFfcCmmlOFquHTF-ow');
+define('API_KEY','258131711:AAGiXj4ksaRXKVswWpkJGMvbsnpyEcT-OYs');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -95,11 +95,12 @@ function save($filename,$TXTdata)
 	fclose($myfile);
 	}
 //===========
-$inch = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=@msgresan&user_id=".$from_id);
+$inch = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=@MuteStats&user_id=".$from_id);
 	
 	if (strpos($inch , '"status":"left"') !== false ) {
-SendMessage($chat_id,"برای استفاده از ربات اول در کانال ما عضو شوید.
-@msgresan");
+SendMessage($chat_id,"سلام 👋
+🔸براي استفاده از ربات در كانال زير جوين شويد :
+@MuteStats");
 }
 elseif(isset($update->callback_query)){
     $callbackMessage = '';
@@ -124,7 +125,7 @@ elseif(isset($update->callback_query)){
             'reply_markup'=>json_encode([
                 'inline_keyboard'=>[
                     [
-                        ['text'=>"💠 عضویت در کانال ما!",'url'=>"https://telegram.me/msgresan"]
+                        ['text'=>"💠 عضویت در کانال ما!",'url'=>"https://telegram.me/MuteStats"]
                     ]
                 ]
             ])
@@ -141,7 +142,7 @@ elseif(isset($update->callback_query)){
             'reply_markup'=>json_encode([
                 'inline_keyboard'=>[
                     [
-                        ['text'=>"💠 عضویت در کانال ما!",'url'=>"https://telegram.me/msgresan"]
+                        ['text'=>"💠 عضویت در کانال ما!",'url'=>"https://telegram.me/mutestats"]
                     ]
                 ]
             ])
@@ -154,16 +155,7 @@ elseif ($textmessage == '🔙 برگشت') {
 save("data/$from_id/step.txt","none");
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
-        	'text'=>"سلام😊👋
-
-📩 به سیستم مسیج رسان خوش آمدید.
-
-💠 این سرویس این قابلیت را دارد که به افراد ریپورت که دارای محدود ارسال پیام هستند این امکان را میدهد که با یکدیگر ارتباط برقرار کنند.
-
-💠 برای ساخت ربات از دکمه ی 🔄 ساخت ربات استفاده نمایید.
-
-💠 اگر با ساخت روبات آشنایی ندارید با دکمه ⚠️ راهنما میتوانید آموزش ساخت روبات را دریافت کنید.
-@MsgResan",
+        	'text'=>"🔃 Welcome To Main Menu",
 		'parse_mode'=>'MarkDown',
         	'reply_markup'=>json_encode([
             	'keyboard'=>[
@@ -174,7 +166,7 @@ var_dump(makereq('sendMessage',[
                    ['text'=>"🚀 ربات های من"],['text'=>"☢ حذف ربات"]
                 ], 
                 [
-                   ['text'=>"⚠️ راهنما"],['text'=>"🔰 قوانین"],['text'=>"💠 کانال ما"]
+                   ['text'=>"📌 راهنما"],['text'=>"🔰 قوانین"],['text'=>"📢 كانال ما"]
                 ]
                 
             	],
@@ -248,13 +240,14 @@ $token = $textmessage ;
 		$source = str_replace("[*BOTTOKEN*]",$token,$source);
 		$source = str_replace("275387751",$from_id,$source);
 		save("bots/$un/index.php",$source);	
-		file_get_contents("http://api.pwrtelegram.xyz/bot".$token."/setwebhook?url=http://climaxit.net/sample/bots/$un/index.php");
+		file_get_contents("https://api.telegram.org/bot".$token."/setwebhook?url=https://pmresantg-shervin921.rhcloud.com/pmresantg/bots/$un/index.php");
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
-        	'text'=>"  ✅ ربات شما با موفقیت آپدیت شد.
+        	'text'=>"  🔸ربات شما با موفقيت ساخته شد.
+🔷 براي مديريت ربات خود به ربات خود رفته و استارت كنيد . 
 
-[👆 کلیک برای ورود به ربات.](https://telegram.me/$un)",
+[🔃برای ورود به ربات خود کلیک کنید .](https://telegram.me/$un)",
 		'parse_mode'=>'MarkDown',
         	'reply_markup'=>json_encode([
             	'keyboard'=>[
@@ -316,9 +309,10 @@ var_dump(makereq('sendMessage',[
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
-        	'text'=>"✅ ربات شما با موفقیت ساخته شد. 
+        	'text'=>"ربات شما با موفقيت ساخته شد.
+🔷 براي مديريت ربات خود به ربات خود رفته و استارت كنيد .
 
-[👆 کلیک برای ورود به ربات.](https://telegram.me/$un)",
+[🔃برای ورود به ربات خود کلیک کنید .](https://telegram.me/$un)",
 		'parse_mode'=>'MarkDown',
         	'reply_markup'=>json_encode([
             	'keyboard'=>[
@@ -371,11 +365,11 @@ return;
 	])
 	]));
 }
-elseif ($textmessage == '/htcb') {
+elseif ($textmessage == '/tutorial_token') {
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
         	'text'=>"💠 آموزش ساخت روبات :
-[👆 کلیک برای دیدن آموزش.](https://telegram.me/msgresan/2)
+[👆 کلیک برای دیدن آموزش.](https://telegram.me/MuteTeam/2576)
 ",
 		'parse_mode'=>'MarkDown',
         	'reply_markup'=>json_encode([
@@ -411,32 +405,34 @@ var_dump(makereq('sendMessage',[
        		])
     		]));
 }
-elseif ($textmessage == '/crrr') {
+elseif ($textmessage == '/about') {
 var_dump(makereq('sendMessage',[
         'chat_id'=>$update->message->chat->id,
-        'text'=>"🔅کدنویس ها: @MikailVigeo
-کانال ما: @PvCreators
-*PvCreators!*",
+        'text'=>"🔸تيم برنامه نويسي ميوت تيم
+📢 كانال ما : @MuteTeam
+👤 برنامه نويس : @MutePuker
+💬 ريپورت : @MutePukerBot
+",
 	'parse_mode'=>'MarkDown',
         'reply_markup'=>json_encode([
             'inline_keyboard'=>[
                 [
-                    ['text'=>"سازنده",'url'=>"https://telegram.me/MikailVigeo"],
-                    ['text'=>"\nکانال ربات",'url'=>"https://telegram.me/PvCreators"]
+                    ['text'=>"👤 developer ",'url'=>"https://telegram.me/MuteTeam"],
+                    ['text'=>"📢 كانال ما",'url'=>"https://telegram.me/PvCreators"]
                 ]
             ]
         ])
     ]));
 }
-elseif ($textmessage == '💠 کانال ما') {
+elseif ($textmessage == '📢 كانال ما') {
 var_dump(makereq('sendMessage',[
         'chat_id'=>$update->message->chat->id,
-        'text'=>"⚠️ ورود به کانال ما جهت دریافت اخبار ربات!",
+        'text'=>"📌 براي دريافت اخرين آپديت ها كليك كنيد :",
 	'parse_mode'=>'MarkDown',
         'reply_markup'=>json_encode([
             'inline_keyboard'=>[
                 [
-                    ['text'=>"ورود",'url'=>"https://telegram.me/MsgResan"]
+                    ['text'=>"📢 join",'url'=>"https://telegram.me/MuteStats"]
                 ]
             ]
         ])
@@ -458,16 +454,25 @@ fclose($myfile2);
 
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
-        	'text'=>"سلام😊👋
+        	'text'=>"سلام👋
+🔸ريپورت شدي و ميخواي از اين عمل رها بشي؟ 😔
+🔶 دوستات ميخوان بيان پي ويت ولي ريپورت هستن؟ 🤒
 
-📩 به سیستم مسیج رسان خوش آمدید.
+ديگه نگران نباش 😃‌ , من ميتوانم واست يك ربات پيام رسان بسازم تا دوستات بتونن بهت پيام بدن . 😇
 
-💠 این سرویس این قابلیت را دارد که به افراد ریپورت که دارای محدود ارسال پیام هستند این امکان را میدهد که با یکدیگر ارتباط برقرار کنند.
+فقط كافيه يك ربات تو @BotFather بسازي و توكنش رو به من بدي . 😊
+[💡بلد نيستي ربات بسازي؟ , كليك كن](https://telegram.me/MuteTeam/2576)
+📌 توكن به عنوان مثال :
+123456789:hiAjPlaUndhkQplmzueTbpwsH
 
-💠 برای ساخت ربات از دکمه ی 🔄 ساخت ربات استفاده نمایید.
+بعد من به شما پيغامي ميدم كه ربات شما ساخته شد , بعد اون به رباتتون رفته دستور /start را ارسال كنيد ❤️👍
 
-💠 اگر با ساخت روبات آشنایی ندارید با دکمه ⚠️ راهنما میتوانید آموزش ساخت روبات را دریافت کنید.
-@MsgResan",
+🔹 ربات اول : رايگان
+🔷 ربات دوم : 2000 تومان
+
+[به من امتياز بده ⭐️](https://telegram.me/storebot?start=PmResanTGbot)
+
+[کانال پشتیبانی 📢](https://telegram.me/joinchat/DjtlIj6qRnex6UF4Ft7OeA)",
 		'parse_mode'=>'MarkDown',
         	'reply_markup'=>json_encode([
             	'keyboard'=>[
@@ -478,7 +483,7 @@ var_dump(makereq('sendMessage',[
                    ['text'=>"🚀 ربات های من"],['text'=>"☢ حذف ربات"]
                 ],
                 [
-                   ['text'=>"⚠️ راهنما"],['text'=>"🔰 قوانین"],['text'=>"💠 کانال ما"]
+                   ['text'=>"⚠️ راهنما"],['text'=>"🔰 قوانین"],['text'=>"📢 كانال ما"]
                 ]
                 
             	],
@@ -501,7 +506,7 @@ Bot
 وجود داشته باشد.
 4⃣ یک توکن به شما میدهد مانند:
 123456:asdjhasjkdhjaksdhjasdlasjkdh
-5⃣ وارد ربات ما یعنی @MsgResanBot شوید و سپس دکمه 🔄 ساخت ربات را انتخاب کنید.
+5⃣ وارد ربات ما یعنی @PmResanTGBot شوید و سپس دکمه 🔄 ساخت ربات را انتخاب کنید.
 و توکن دریافتی را ارسال نمایید تا ربات شما نصب شود.
 ",
 		'parse_mode'=>'MarkDown',
@@ -568,7 +573,9 @@ return;
 save("data/$from_id/step.txt","create bot");
 var_dump(makereq('sendMessage',[
         	'chat_id'=>$update->message->chat->id,
-        	'text'=>"💠 توکن را وارد کنید : ",
+        	'text'=>"⚙ به بخش ساخت ربات خوش آمدید
+
+جهت ساخت ربات توکن دریافتی از بات فادر را ارسال كنيد : ",
 		'parse_mode'=>'MarkDown',
         	'reply_markup'=>json_encode([
             	'keyboard'=>[
