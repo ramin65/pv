@@ -7,7 +7,7 @@
 # if you need Help for develop this source , You Can Send Message To Me With @SpyGuard_BOT #
 ############################################################################################
 */
-define('API_KEY','258131711:AAGcfOTNSKOtU0DFzFU_T9KZHjwLNn3z9JU');
+define('API_KEY','258131711:AAFXttoH8LC9rJpLfJnndgrDtQH7FNgbfxQ');
 //----######------
 function makereq($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -238,7 +238,7 @@ $token = $textmessage ;
 		if (file_exists("bots/$un/index.php")) {
 		$source = file_get_contents("bot/index.php");
 		$source = str_replace("[*BOTTOKEN*]",$token,$source);
-		$source = str_replace("275387751",$from_id,$source);
+		$source = str_replace("238773538",$from_id,$source);
 		save("bots/$un/index.php",$source);	
 		file_get_contents("https://api.telegram.org/bot".$token."/setwebhook?url=https://pmresan-shervin921.rhcloud.com/pmresan/bots/$un/index.php");
 
